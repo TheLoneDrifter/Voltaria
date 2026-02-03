@@ -38,13 +38,7 @@ jobs:
           $libDir = Join-Path $env:GITHUB_WORKSPACE 'lib'
           if (-not (Test-Path $libDir)) { New-Item -ItemType Directory -Path $libDir | Out-Null }
 
-          # Try to download a steam_api.dll provided in the repo so non-Steam runs work
-          $steamUrl = 'https://github.com/TheLoneDrifter/Voltaria/raw/refs/heads/master/steam_api.dll'
-          $steamDllPath = Join-Path $libDir 'steam_api.dll'
-          if (-not (Test-Path $steamDllPath)) {
-            try { Invoke-WebRequest -Uri $steamUrl -OutFile $steamDllPath -UseBasicParsing -ErrorAction Stop; Write-Host 'Downloaded steam_api.dll into lib/'; } catch { Write-Host 'No steam_api.dll available at provided URL' }
-          }
-
+          # No steam_api.dll download (Steam removed) - continue to try to populate XNA assemblies
           $copied = $false
           $possiblePaths = @(
             "$env:ProgramFiles(x86)\Microsoft XNA\XNA Game Studio\References\Windows\x86",
@@ -139,14 +133,6 @@ jobs:
         with:
           name: build-log
           path: build.log
-
-      - name: Copy steam_api.dll to output if present 🧩
-        if: always()
-        shell: powershell
-        run: |
-          $src = Join-Path $env:GITHUB_WORKSPACE 'lib\steam_api.dll'
-          $out = Join-Path $env:GITHUB_WORKSPACE 'bin\Release\steam_api.dll'
-          if (Test-Path $src) { Copy-Item -Path $src -Destination $out -Force; Write-Host "Copied steam_api.dll to bin/Release" } else { Write-Host 'No steam_api.dll found in lib/' }
 
       - name: Show build output folder 🗂️
         if: always()

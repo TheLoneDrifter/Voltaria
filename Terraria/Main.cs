@@ -21407,7 +21407,6 @@ namespace Terraria
 		}
 		protected void QuitGame()
 		{
-			Steam.Kill();
 			base.Exit();
 		}
 		protected Color randColor()
