@@ -57,7 +57,16 @@ jobs:
 
           if (-not $copied -and (Get-Command choco -ErrorAction SilentlyContinue)) {
             Write-Host 'Attempting chocolatey install of XNA (best-effort)...'
-            choco install xna -y || choco install xna4 -y || choco install xna-4.0 -y
+            try {
+              & choco install xna -y
+              if ($LASTEXITCODE -ne 0) { throw 'xna install failed' }
+            } catch {
+              Write-Host 'xna package failed; trying xna4...'
+              try { & choco install xna4 -y; if ($LASTEXITCODE -ne 0) { throw 'xna4 install failed' } } catch {
+                Write-Host 'xna4 failed; trying xna-4.0...'
+                try { & choco install xna-4.0 -y } catch { Write-Host 'xna installs failed; build may still fail.' }
+              }
+            }
             foreach ($p in $possiblePaths) { if (Test-Path $p) { Copy-Item "$p\*.dll" -Destination $libDir -Force -ErrorAction SilentlyContinue; $copied = $true; break } }
           }
 
