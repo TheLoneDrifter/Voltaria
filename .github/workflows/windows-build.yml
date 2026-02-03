@@ -64,8 +64,7 @@ jobs:
           if (-not $copied) {
             Write-Host 'Attempting to download XNA redistributable (best-effort)'
             $urls = @(
-              'https://download.microsoft.com/download/6/3/6/636B6D57-0C1A-4708-9D0A-48D86B6B6F8A/xnafx40_redist.msi',
-              'https://download.microsoft.com/download/1/1/6/116CC605-4AF3-4BD6-8790-6B0C07AD9C17/xnafx40_redist.msi'
+              'https://download.microsoft.com/download/a/c/2/ac2c903b-e6e8-42c2-9fd7-bebac362a930/xnafx40_redist.msi'
             )
             foreach ($u in $urls) {
               try {
