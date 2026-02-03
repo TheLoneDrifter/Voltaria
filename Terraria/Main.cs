@@ -835,7 +835,7 @@ namespace Terraria
 			Path.DirectorySeparatorChar,
 			"My Games",
 			Path.DirectorySeparatorChar,
-			"Terraria"
+			"Voltaria"
 		});
 		public static string WorldPath = Main.SavePath + Path.DirectorySeparatorChar + "Worlds";
 		public static string PlayerPath = Main.SavePath + Path.DirectorySeparatorChar + "Players";
@@ -1990,7 +1990,7 @@ namespace Terraria
 			}
 			else
 			{
-				Console.Title = "Terraria Server " + Main.versionNumber2;
+				Console.Title = "Voltaria Server " + Main.versionNumber2;
 			}
 			Main.dedServ = true;
 			Main.showSplash = false;
@@ -21991,7 +21991,7 @@ namespace Terraria
 								{
 									if (this.selectedMenu == 2 || Main.inputTextEnter || Main.autoPass)
 									{
-										this.tServer.StartInfo.FileName = "TerrariaServer.exe";
+										this.tServer.StartInfo.FileName = "VoltariaServer.exe";
 										this.tServer.StartInfo.Arguments = string.Concat(new object[]
 										{
 											"-autoshutdown -world \"",
@@ -22119,9 +22119,9 @@ namespace Terraria
 														Main.menuServer = false;
 														Main.netMode = 0;
 														array9[0] = Lang.menu[12];
-														array9[1] = Lang.menu[13];
-														array9[2] = Lang.menu[14];
-														array9[3] = Lang.menu[15];
+														array9[1] = Lang.menu[14];
+														array9[2] = Lang.menu[15];
+								
 														num4 = 4;
 														if (this.selectedMenu == 3)
 														{
@@ -25139,7 +25139,7 @@ namespace Terraria
 				{
 					num111 = 2;
 				}
-				string text9 = "Copyright © 2013 Re-Logic";
+				string text9 = "Copyright © 2013 VoltacceptYT";
 				Vector2 origin2 = Main.fontMouseText.MeasureString(text9);
 				origin2.X *= 0.5f;
 				origin2.Y *= 0.5f;

@@ -76,7 +76,7 @@ namespace Terraria
 				if (Netplay.serverSock[this.whoAmI].state == 0)
 				{
 					string @string = Encoding.UTF8.GetString(this.readBuffer, start + 1, length - 1);
-					if (!(@string == "Terraria" + Main.curRelease))
+					if (!(@string == "Voltaria" + Main.curRelease))
 					{
 						NetMessage.SendData(2, this.whoAmI, -1, Lang.mp[4], 0, 0f, 0f, 0f, 0);
 						return;

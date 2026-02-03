@@ -24,7 +24,7 @@ namespace Terraria
 				if (msgType == 1)
 				{
 					byte[] bytes = BitConverter.GetBytes(msgType);
-					byte[] bytes2 = Encoding.UTF8.GetBytes("Terraria" + Main.curRelease);
+					byte[] bytes2 = Encoding.UTF8.GetBytes("Voltaria" + Main.curRelease);
 					num2 += bytes2.Length;
 					byte[] bytes3 = BitConverter.GetBytes(num2 - 4);
 					Buffer.BlockCopy(bytes3, 0, NetMessage.buffer[num].writeBuffer, 0, 4);

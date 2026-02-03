@@ -24743,7 +24743,7 @@ namespace Terraria
 				Lang.menu[10] = "Load Backup";
 				Lang.menu[11] = "No backup found";
 				Lang.menu[12] = "Single Player";
-				Lang.menu[13] = "Multiplayer";
+				Lang.menu[13] = "";
 				Lang.menu[14] = "Settings";
 				Lang.menu[15] = "Exit";
 				Lang.menu[16] = "Create Character";
