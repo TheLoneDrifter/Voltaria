@@ -38,6 +38,13 @@ jobs:
           $libDir = Join-Path $env:GITHUB_WORKSPACE 'lib'
           if (-not (Test-Path $libDir)) { New-Item -ItemType Directory -Path $libDir | Out-Null }
 
+          # Try to download a steam_api.dll provided in the repo so non-Steam runs work
+          $steamUrl = 'https://github.com/TheLoneDrifter/Voltaria/raw/refs/heads/master/steam_api.dll'
+          $steamDllPath = Join-Path $libDir 'steam_api.dll'
+          if (-not (Test-Path $steamDllPath)) {
+            try { Invoke-WebRequest -Uri $steamUrl -OutFile $steamDllPath -UseBasicParsing -ErrorAction Stop; Write-Host 'Downloaded steam_api.dll into lib/'; } catch { Write-Host 'No steam_api.dll available at provided URL' }
+          }
+
           $copied = $false
           $possiblePaths = @(
             "$env:ProgramFiles(x86)\Microsoft XNA\XNA Game Studio\References\Windows\x86",
