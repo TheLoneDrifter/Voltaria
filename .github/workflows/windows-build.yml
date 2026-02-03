@@ -133,9 +133,17 @@ jobs:
           name: build-log
           path: build.log
 
+      - name: Show build output folder 🗂️
+        if: always()
+        shell: powershell
+        run: |
+          Write-Host 'Listing bin/Release contents:'
+          if (Test-Path 'bin/Release') { Get-ChildItem -Path 'bin/Release' -Recurse | ForEach-Object { Write-Host $_.FullName } } else { Write-Host 'bin/Release not found' }
+
       - name: Upload compiled binary (if present) 📤
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: terraria-bin
-          path: Terraria/bin/Release/
+          path: bin/Release/**
+          retention-days: 7
