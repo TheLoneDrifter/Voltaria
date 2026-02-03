@@ -47,6 +47,32 @@ jobs:
             Write-Host 'Chocolatey not found; skipping XNA install.'
           }
 
+      - name: Install .NET Framework 4.0 Targeting Pack (Developer Pack) 📥
+        shell: powershell
+        continue-on-error: true
+        run: |
+          Write-Host 'Attempting to install .NET Framework 4.0 Developer/Targeting Pack (best-effort)...'
+
+          # 1) Try Chocolatey (if available)
+          if (Get-Command choco -ErrorAction SilentlyContinue) {
+            Write-Host 'Trying Chocolatey packages...'
+            choco install netfx -y || choco install dotnet4 -y || choco install dotnetfx -y || Write-Host 'No suitable choco package available or install failed.'
+          } else { Write-Host 'Chocolatey not available; skipping choco step.' }
+
+          # 2) Try official Microsoft offline installer for .NET 4.0
+          $url = 'https://download.microsoft.com/download/1/1/6/116D46CE-6D1F-40FE-A1D9-902B0A0AA8BC/dotNetFx40_Full_x86_x64.exe'
+          $out = "$env:TEMP\dotnetfx40.exe"
+          Write-Host "Downloading $url to $out..."
+          try { Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing -ErrorAction Stop } catch { Write-Host 'Download failed or blocked.' }
+          if (Test-Path $out) {
+            Write-Host 'Running .NET 4.0 installer (quiet)...'
+            Start-Process -FilePath $out -ArgumentList '/q' -Wait -NoNewWindow -ErrorAction SilentlyContinue
+          }
+
+          # 3) Verify install by checking Reference Assemblies location
+          $refPath = 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0'
+          if (Test-Path $refPath) { Write-Host "Targeting pack present at $refPath" } else { Write-Host "Targeting pack NOT found at $refPath after attempts" }
+
       - name: Restore NuGet packages 📦
         run: nuget restore Terraria.sln
 
