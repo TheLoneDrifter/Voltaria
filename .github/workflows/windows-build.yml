@@ -50,8 +50,7 @@ jobs:
       - name: Restore NuGet packages 📦
         run: nuget restore Terraria.sln
 
-      - name: Locate MSBuild 🔎
-        id: find-msbuild
+      - name: Locate and build with MSBuild 🔎🔧
         shell: powershell
         run: |
           $msbuildPath = ''
@@ -63,14 +62,8 @@ jobs:
               if ($ms) { $msbuildPath = $ms }
             }
           }
-          if ([string]::IsNullOrEmpty($msbuildPath)) { Write-Host "msbuild_path=" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append; Write-Host 'MSBuild not found.' }
-          else { Write-Host "msbuild_path=$msbuildPath" | Out-File -FilePath $env:GITHUB_OUTPUT -Encoding utf8 -Append; Write-Host "MSBuild path set to $msbuildPath" }
-
-      - name: Build with MSBuild 🔧
-        shell: powershell
-        run: |
-          $msbuildPath = '${{ steps.find-msbuild.outputs.msbuild_path }}'
           if (-not [string]::IsNullOrEmpty($msbuildPath)) {
+            Write-Host "MSBuild: $msbuildPath"
             & $msbuildPath 'Terraria.sln' '/p:Configuration=Release' '/m' | Tee-Object -FilePath build.log
             if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           } else {
