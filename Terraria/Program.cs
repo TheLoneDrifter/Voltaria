@@ -66,7 +66,7 @@ namespace Terraria
 							streamWriter.WriteLine(ex);
 							streamWriter.WriteLine("/n");
 						}
-						MessageBox.Show(ex.ToString(), "Terraria: Error");
+						MessageBox.Show(ex.ToString(), "Voltaria: Error");
 					}
 					catch
 					{

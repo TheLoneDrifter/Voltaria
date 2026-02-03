@@ -188,7 +188,7 @@ namespace Terraria
 		public static Stopwatch updateTimer = new Stopwatch();
 		public bool gammaTest;
 		public static int fountainColor = -1;
-		public static bool showSplash = true;
+		public static bool showSplash = false;
 		public static bool ignoreErrors = true;
 		public static string defaultIP = "";
 		public static int dayRate = 1;

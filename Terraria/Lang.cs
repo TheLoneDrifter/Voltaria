@@ -24228,19 +24228,19 @@ namespace Terraria
 				num = Main.rand.Next(50);
 				if (num == 0)
 				{
-					return "Terraria: Dig Peon, Dig!";
+					return "Voltaria: Dig Peon, Dig!";
 				}
 				if (num == 1)
 				{
-					return "Terraria: Epic Dirt";
+					return "Voltaria: Epic Dirt";
 				}
 				if (num == 2)
 				{
-					return "Terraria: Hey Guys!";
+					return "Voltaria: Hey Guys!";
 				}
 				if (num == 3)
 				{
-					return "Terraria: Sand is Overpowered";
+					return "Voltaria: Sand is Overpowered";
 				}
 				if (num == 4)
 				{
@@ -24248,181 +24248,181 @@ namespace Terraria
 				}
 				if (num == 5)
 				{
-					return "Terraria: A Bunnies Tale";
+					return "Voltaria: A Bunnies Tale";
 				}
 				if (num == 6)
 				{
-					return "Terraria: Dr. Bones and The Temple of Blood Moon";
+					return "Voltaria: Dr. Bones and The Temple of Blood Moon";
 				}
 				if (num == 7)
 				{
-					return "Terraria: Slimeassic Park";
+					return "Voltaria: Slimeassic Park";
 				}
 				if (num == 8)
 				{
-					return "Terraria: The Grass is Greener on This Side";
+					return "Voltaria: The Grass is Greener on This Side";
 				}
 				if (num == 9)
 				{
-					return "Terraria: Small Blocks, Not for Children Under the Age of 5";
+					return "Voltaria: Small Blocks, Not for Children Under the Age of 5";
 				}
 				if (num == 10)
 				{
-					return "Terraria: Digger T' Blocks";
+					return "Voltaria: Digger T' Blocks";
 				}
 				if (num == 11)
 				{
-					return "Terraria: There is No Cow Layer";
+					return "Voltaria: There is No Cow Layer";
 				}
 				if (num == 12)
 				{
-					return "Terraria: Suspicous Looking Eyeballs";
+					return "Voltaria: Suspicous Looking Eyeballs";
 				}
 				if (num == 13)
 				{
-					return "Terraria: Purple Grass!";
+					return "Voltaria: Purple Grass!";
 				}
 				if (num == 14)
 				{
-					return "Terraria: Noone Dug Behind!";
+					return "Voltaria: Noone Dug Behind!";
 				}
 				if (num == 15)
 				{
-					return "Terraria: The Water Fall Of Content!";
+					return "Voltaria: The Water Fall Of Content!";
 				}
 				if (num == 16)
 				{
-					return "Terraria: Earthbound";
+					return "Voltaria: Earthbound";
 				}
 				if (num == 17)
 				{
-					return "Terraria: Dig Dug Ain't Got Nuthin on Me";
+					return "Voltaria: Dig Dug Ain't Got Nuthin on Me";
 				}
 				if (num == 18)
 				{
-					return "Terraria: Ore's Well That Ends Well";
+					return "Voltaria: Ore's Well That Ends Well";
 				}
 				if (num == 19)
 				{
-					return "Terraria: Judgement Clay";
+					return "Voltaria: Judgement Clay";
 				}
 				if (num == 20)
 				{
-					return "Terraria: Terrestrial Trouble";
+					return "Voltaria: Terrestrial Trouble";
 				}
 				if (num == 21)
 				{
-					return "Terraria: Obsessive-Compulsive Discovery Simulator";
+					return "Voltaria: Obsessive-Compulsive Discovery Simulator";
 				}
 				if (num == 22)
 				{
-					return "Terraria: Red Dev Redemption";
+					return "Voltaria: Red Dev Redemption";
 				}
 				if (num == 23)
 				{
-					return "Terraria: Rise of the Slimes";
+					return "Voltaria: Rise of the Slimes";
 				}
 				if (num == 24)
 				{
-					return "Terraria: Now with more things to kill you!";
+					return "Voltaria: Now with more things to kill you!";
 				}
 				if (num == 25)
 				{
-					return "Terraria: Rumors of the Guides' death were greatly exaggerated";
+					return "Voltaria: Rumors of the Guides' death were greatly exaggerated";
 				}
 				if (num == 26)
 				{
-					return "Terraria: I Pity the Tools...";
+					return "Voltaria: I Pity the Tools...";
 				}
 				if (num == 27)
 				{
-					return "Terraria: A spelunker says 'What'?";
+					return "Voltaria: A spelunker says 'What'?";
 				}
 				if (num == 28)
 				{
-					return "Terraria: So then I said 'Something about a PC update....'";
+					return "Voltaria: So then I said 'Something about a PC update....'";
 				}
 				if (num == 29)
 				{
-					return "Terraria: May the blocks be with you";
+					return "Voltaria: May the blocks be with you";
 				}
 				if (num == 30)
 				{
-					return "Terraria: Better than life";
+					return "Voltaria: Better than life";
 				}
 				if (num == 31)
 				{
-					return "Terraria: Terraria: Terraria:";
+					return "Voltaria: Voltaria: Voltaria:";
 				}
 				if (num == 32)
 				{
-					return "Terraria: Now in 1D";
+					return "Voltaria: Now in 1D";
 				}
 				if (num == 33)
 				{
-					return "Terraria: Coming soon to a computer near you";
+					return "Voltaria: Coming soon to a computer near you";
 				}
 				if (num == 34)
 				{
-					return "Terraria: Dividing by zero";
+					return "Voltaria: Dividing by zero";
 				}
 				if (num == 35)
 				{
-					return "Terraria: Now with SOUND";
+					return "Voltaria: Now with SOUND";
 				}
 				if (num == 36)
 				{
-					return "Terraria: Press alt-f4";
+					return "Voltaria: Press alt-f4";
 				}
 				if (num == 37)
 				{
-					return "Terraria: I Pity the Tools";
+					return "Voltaria: I Pity the Tools";
 				}
 				if (num == 38)
 				{
-					return "Terraria: You sand bro?";
+					return "Voltaria: You sand bro?";
 				}
 				if (num == 39)
 				{
-					return "Terraria: A good day to dig hard";
+					return "Voltaria: A good day to dig hard";
 				}
 				if (num == 40)
 				{
-					return "Terraria: Can You Re-Dig-It?";
+					return "Voltaria: Can You Re-Dig-It?";
 				}
 				if (num == 41)
 				{
-					return "Terraria: I don't know that-- aaaaa!";
+					return "Voltaria: I don't know that-- aaaaa!";
 				}
 				if (num == 42)
 				{
-					return "Terraria: What's that purple spiked thing?";
+					return "Voltaria: What's that purple spiked thing?";
 				}
 				if (num == 43)
 				{
-					return "Terraria: I wanna be the guide";
+					return "Voltaria: I wanna be the guide";
 				}
 				if (num == 44)
 				{
-					return "Terraria: Cthulhu is mad... and is missing an eye!";
+					return "Voltaria: Cthulhu is mad... and is missing an eye!";
 				}
 				if (num == 45)
 				{
-					return "Terraria: NOT THE BEES!!!";
+					return "Voltaria: NOT THE BEES!!!";
 				}
 				if (num == 46)
 				{
-					return "Terraria: Legend of Maxx";
+					return "Voltaria: Legend of Maxx";
 				}
 				if (num == 47)
 				{
-					return "Terraria: Cult of Cenx";
+					return "Voltaria: Cult of Cenx";
 				}
 				if (num == 48)
 				{
 					return "Terraria 2: Electric Boogaloo";
 				}
-				return "Terraria: Shut Up and Dig Gaiden!";
+				return "Voltaria: Shut Up and Dig Gaiden!";
 			}
 			else
 			{
@@ -24430,19 +24430,19 @@ namespace Terraria
 				{
 					if (num == 0)
 					{
-						return "Terraria: Nun grab schon, Bauer, grab!";
+						return "Voltaria: Nun grab schon, Bauer, grab!";
 					}
 					if (num == 1)
 					{
-						return "Terraria: Epischer Dreck";
+						return "Voltaria: Epischer Dreck";
 					}
 					if (num == 2)
 					{
-						return "Terraria: Huhu, Leute!";
+						return "Voltaria: Huhu, Leute!";
 					}
 					if (num == 3)
 					{
-						return "Terraria: Sand is overpowered!";
+						return "Voltaria: Sand is overpowered!";
 					}
 					if (num == 4)
 					{
@@ -24450,45 +24450,45 @@ namespace Terraria
 					}
 					if (num == 5)
 					{
-						return "Terraria: Geschichte eines verderbten Haeschens";
+						return "Voltaria: Geschichte eines verderbten Haeschens";
 					}
 					if (num == 6)
 					{
-						return "Terraria: Dr. Bones und der Tempel des Blutmondes";
+						return "Voltaria: Dr. Bones und der Tempel des Blutmondes";
 					}
 					if (num == 7)
 					{
-						return "Terraria: Schleimassic Park";
+						return "Voltaria: Schleimassic Park";
 					}
 					if (num == 8)
 					{
-						return "Terraria: Das Gras ist auf dieser Seite gruener";
+						return "Voltaria: Das Gras ist auf dieser Seite gruener";
 					}
 					if (num == 9)
 					{
-						return "Terraria: Kleine Bloecke, nicht fuer Kinder unter 5";
+						return "Voltaria: Kleine Bloecke, nicht fuer Kinder unter 5";
 					}
 					if (num == 10)
 					{
-						return "Terraria: Der Block des Ausgraebers";
+						return "Voltaria: Der Block des Ausgraebers";
 					}
 					if (num == 11)
 					{
-						return "Terraria: Hier gibt's auch kein Kuh-Level!";
+						return "Voltaria: Hier gibt's auch kein Kuh-Level!";
 					}
 					if (num == 12)
 					{
-						return "Terraria: Verdaechtig ausschauende Augaepfel";
+						return "Voltaria: Verdaechtig ausschauende Augaepfel";
 					}
 					if (num == 13)
 					{
-						return "Terraria: Violettes Gras!";
+						return "Voltaria: Violettes Gras!";
 					}
 					if (num == 14)
 					{
-						return "Terraria: Houston, wir haben ein Problem gehabt!";
+						return "Voltaria: Houston, wir haben ein Problem gehabt!";
 					}
-					return "Terraria: Grab mit deiner Hand, nicht mit dem Mund!";
+					return "Voltaria: Grab mit deiner Hand, nicht mit dem Mund!";
 				}
 				else
 				{
@@ -24496,65 +24496,65 @@ namespace Terraria
 					{
 						if (num == 0)
 						{
-							return "Terraria: Scava contadino, scava!";
+							return "Voltaria: Scava contadino, scava!";
 						}
 						if (num == 1)
 						{
-							return "Terraria: Terra epica";
+							return "Voltaria: Terra epica";
 						}
 						if (num == 2)
 						{
-							return "Terraria: Ehi, ragazzi!";
+							return "Voltaria: Ehi, ragazzi!";
 						}
 						if (num == 3)
 						{
-							return "Terraria: La sabbia è strapotente";
+							return "Voltaria: La sabbia è strapotente";
 						}
 						if (num == 4)
 						{
-							return "Terraria: Il ritorno della guida";
+							return "Voltaria: Il ritorno della guida";
 						}
 						if (num == 5)
 						{
-							return "Terraria: Coda di coniglio";
+							return "Voltaria: Coda di coniglio";
 						}
 						if (num == 6)
 						{
-							return "Terraria: Dottor Ossa e il tempio della luna di sangue";
+							return "Voltaria: Dottor Ossa e il tempio della luna di sangue";
 						}
 						if (num == 7)
 						{
-							return "Terraria: Slimeassic Park";
+							return "Voltaria: Slimeassic Park";
 						}
 						if (num == 8)
 						{
-							return "Terraria: L'erba è più verde da questo lato";
+							return "Voltaria: L'erba è più verde da questo lato";
 						}
 						if (num == 9)
 						{
-							return "Terraria: Piccoli blocchi, non per bambini al di sotto di 5 anni";
+							return "Voltaria: Piccoli blocchi, non per bambini al di sotto di 5 anni";
 						}
 						if (num == 10)
 						{
-							return "Terraria:  Il blocco dello scavatore";
+							return "Voltaria:  Il blocco dello scavatore";
 						}
 						if (num == 11)
 						{
-							return "Terraria: No mucche, no party";
+							return "Voltaria: No mucche, no party";
 						}
 						if (num == 12)
 						{
-							return "Terraria: Bulbi oculari diffidenti";
+							return "Voltaria: Bulbi oculari diffidenti";
 						}
 						if (num == 13)
 						{
-							return "Terraria: Erba viola!";
+							return "Voltaria: Erba viola!";
 						}
 						if (num == 14)
 						{
-							return "Terraria: Houston, abbiamo un problema!";
+							return "Voltaria: Houston, abbiamo un problema!";
 						}
-						return "Terraria: Zitto e scava, 'azzo!";
+						return "Voltaria: Zitto e scava, 'azzo!";
 					}
 					else
 					{
@@ -24590,7 +24590,7 @@ namespace Terraria
 							}
 							if (num == 7)
 							{
-								return "Terraria: Slimeassic Park";
+								return "Voltaria: Slimeassic Park";
 							}
 							if (num == 8)
 							{
@@ -24630,19 +24630,19 @@ namespace Terraria
 							}
 							if (num == 0)
 							{
-								return "Terraria: ¡Cava, peón, cava!";
+								return "Voltaria: ¡Cava, peón, cava!";
 							}
 							if (num == 1)
 							{
-								return "Terraria: Terreno épico";
+								return "Voltaria: Terreno épico";
 							}
 							if (num == 2)
 							{
-								return "Terraria: ¡Hola, tíos!";
+								return "Voltaria: ¡Hola, tíos!";
 							}
 							if (num == 3)
 							{
-								return "Terraria: El poder de la arena";
+								return "Voltaria: El poder de la arena";
 							}
 							if (num == 4)
 							{
@@ -24650,45 +24650,45 @@ namespace Terraria
 							}
 							if (num == 5)
 							{
-								return "Terraria: Un cuento de conejitos";
+								return "Voltaria: Un cuento de conejitos";
 							}
 							if (num == 6)
 							{
-								return "Terraria: El Dr. Látigo y el Templo de la Luna Sangrienta";
+								return "Voltaria: El Dr. Látigo y el Templo de la Luna Sangrienta";
 							}
 							if (num == 7)
 							{
-								return "Terraria: Babosic Park";
+								return "Voltaria: Babosic Park";
 							}
 							if (num == 8)
 							{
-								return "Terraria: Mi césped es más verde que el del vecino";
+								return "Voltaria: Mi césped es más verde que el del vecino";
 							}
 							if (num == 9)
 							{
-								return "Terraria: Bloques de construcción (no apto para menores de 5 años)";
+								return "Voltaria: Bloques de construcción (no apto para menores de 5 años)";
 							}
 							if (num == 10)
 							{
-								return "Terraria: Buscador de bloques";
+								return "Voltaria: Buscador de bloques";
 							}
 							if (num == 11)
 							{
-								return "Terraria: Nada de niveles ocultos";
+								return "Voltaria: Nada de niveles ocultos";
 							}
 							if (num == 12)
 							{
-								return "Terraria: Ojos de aspecto sospechoso";
+								return "Voltaria: Ojos de aspecto sospechoso";
 							}
 							if (num == 13)
 							{
-								return "Terraria: ¡Césped morado!";
+								return "Voltaria: ¡Césped morado!";
 							}
 							if (num == 14)
 							{
-								return "Terraria: ¡No abandonamos ningún agujero!";
+								return "Voltaria: ¡No abandonamos ningún agujero!";
 							}
-							return "Terraria: ¡Cállate y cava un universo paralelo!";
+							return "Voltaria: ¡Cállate y cava un universo paralelo!";
 						}
 					}
 				}
