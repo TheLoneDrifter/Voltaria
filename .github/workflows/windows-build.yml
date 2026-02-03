@@ -71,7 +71,7 @@ jobs:
           } else { Write-Host 'Chocolatey not available; skipping choco step.' }
 
           # 2) Try official Microsoft offline installer for .NET 4.0
-          $url = 'https://download.microsoft.com/download/1/1/6/116D46CE-6D1F-40FE-A1D9-902B0A0AA8BC/dotNetFx40_Full_x86_x64.exe'
+          $url = 'https://download.microsoft.com/download/9/5/a/95a9616b-7a37-4af6-bc36-d6ea96c8daae/dotNetFx40_Full_x86_x64.exe'
           $out = "$env:TEMP\dotnetfx40.exe"
           Write-Host "Downloading $url to $out..."
           try {
