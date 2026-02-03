@@ -1,0 +1,46 @@
+name: Build Terraria (Windows)
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository ✅
+        uses: actions/checkout@v4
+
+      - name: Print runner info 🔍
+        run: |
+          echo "Runner: $RUNNER_OS"
+          msbuild -version || echo "msbuild not found"
+
+      - name: Try to install XNA (Chocolatey) ⚠️
+        shell: powershell
+        run: |
+          Write-Host "Attempting to install XNA 4.0 via Chocolatey (best-effort)..."
+          choco install xna -y || choco install xna4 -y || choco install xna-4.0 -y || Write-Host 'XNA install attempts failed or package not found; build may fail if XNA assemblies are missing.'
+
+      - name: Restore NuGet packages 📦
+        run: nuget restore Terraria.sln
+
+      - name: Build with MSBuild 🔧
+        run: msbuild Terraria.sln /p:Configuration=Release /m > build.log 2>&1 || exit /b %ERRORLEVEL%
+
+      - name: Upload build log 🧾
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-log
+          path: build.log
+
+      - name: Upload compiled binary (if present) 📤
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: terraria-bin
+          path: Terraria/bin/Release/
