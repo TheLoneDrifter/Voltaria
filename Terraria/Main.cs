@@ -22130,12 +22130,11 @@ namespace Terraria
 														if (this.selectedMenu == 1)
 														{
 															Main.PlaySound(10, -1, -1, 1);
-															Main.menuMode = 12;
+															Main.menuMode = 11;
 														}
 														if (this.selectedMenu == 2)
 														{
-															Main.PlaySound(10, -1, -1, 1);
-															Main.menuMode = 11;
+															this.QuitGame();
 														}
 														if (this.selectedMenu == 0)
 														{
