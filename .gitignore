@@ -101,6 +101,9 @@ ClientBin
 *.dbmdl
 Generated_Code #added for RIA/Silverlight projects
 
+# Ignore lib folder used to store downloaded XNA assemblies at CI time
+/lib/
+
 # Backup & report files from converting an old project file to a newer
 # Visual Studio version. Backup files are not needed, because we have git ;-)
 _UpgradeReport_Files/

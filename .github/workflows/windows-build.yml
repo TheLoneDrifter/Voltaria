@@ -31,65 +31,59 @@ jobs:
             }
           }
 
-      - name: Try to install XNA (Chocolatey) ⚠️
+      - name: Populate lib with XNA assemblies (best-effort) 📦
         shell: powershell
         continue-on-error: true
         run: |
-          Write-Host 'Attempting to install XNA 4.0 via Chocolatey (best-effort)...'
-          if (Get-Command choco -ErrorAction SilentlyContinue) {
-            try {
-              choco install xna -y
-            } catch {
-              Write-Host 'xna package failed; trying xna4...'
-              try { choco install xna4 -y } catch { Write-Host 'xna installs failed; build may still fail.' }
+          $libDir = Join-Path $env:GITHUB_WORKSPACE 'lib'
+          if (-not (Test-Path $libDir)) { New-Item -ItemType Directory -Path $libDir | Out-Null }
+
+          $copied = $false
+          $possiblePaths = @(
+            "$env:ProgramFiles(x86)\Microsoft XNA\XNA Game Studio\References\Windows\x86",
+            "$env:ProgramFiles(x86)\Microsoft XNA\XNA Game Studio\References\Windows",
+            "$env:ProgramFiles(x86)\Reference Assemblies\Microsoft\Framework\XNA",
+            "$env:ProgramFiles(x86)\Reference Assemblies\Microsoft\Framework\XNA\v4.0"
+          )
+
+          foreach ($p in $possiblePaths) {
+            if (Test-Path $p) {
+              Write-Host "Found XNA reference folder: $p"
+              Copy-Item "$p\*.dll" -Destination $libDir -Force -ErrorAction SilentlyContinue
+              $copied = $true
+              break
             }
-          } else {
-            Write-Host 'Chocolatey not found; skipping XNA install.'
           }
 
-      - name: Install .NET Framework 4.0 Targeting Pack (Developer Pack) 📥
-        shell: powershell
-        continue-on-error: true
-        run: |
-          Write-Host 'Attempting to install .NET Framework 4.0 Developer/Targeting Pack (best-effort)...'
+          if (-not $copied -and (Get-Command choco -ErrorAction SilentlyContinue)) {
+            Write-Host 'Attempting chocolatey install of XNA (best-effort)...'
+            choco install xna -y || choco install xna4 -y || choco install xna-4.0 -y
+            foreach ($p in $possiblePaths) { if (Test-Path $p) { Copy-Item "$p\*.dll" -Destination $libDir -Force -ErrorAction SilentlyContinue; $copied = $true; break } }
+          }
 
-          # 1) Try Chocolatey (if available) - run packages sequentially and stop on success
-          if (Get-Command choco -ErrorAction SilentlyContinue) {
-            Write-Host 'Chocolatey found. Trying candidate packages sequentially...'
-            $packages = @('netfx','dotnet4','dotnetfx')
-            $installed = $false
-            foreach ($p in $packages) {
-              Write-Host "Attempting: choco install $p -y"
+          if (-not $copied) {
+            Write-Host 'Attempting to download XNA redistributable (best-effort)'
+            $urls = @(
+              'https://download.microsoft.com/download/6/3/6/636B6D57-0C1A-4708-9D0A-48D86B6B6F8A/xnafx40_redist.msi',
+              'https://download.microsoft.com/download/1/1/6/116CC605-4AF3-4BD6-8790-6B0C07AD9C17/xnafx40_redist.msi'
+            )
+            foreach ($u in $urls) {
               try {
-                & choco install $p -y
+                $msi = Join-Path $env:TEMP 'xna_redist.msi'
+                Invoke-WebRequest -Uri $u -OutFile $msi -UseBasicParsing -ErrorAction Stop
+                $extractDir = Join-Path $env:TEMP 'xna_extract'
+                if (Test-Path $extractDir) { Remove-Item $extractDir -Recurse -Force }
+                msiexec /a $msi /qn TARGETDIR=$extractDir
+                Copy-Item "$extractDir\*.dll" -Destination $libDir -Force -ErrorAction SilentlyContinue
+                if (Get-ChildItem "$libDir\*.dll" -ErrorAction SilentlyContinue) { $copied = $true; break }
               } catch {
-                Write-Host "choco install $p failed with error: $_"
+                Write-Host "Failed to download/extract from $u"
               }
-              if ($LASTEXITCODE -eq 0) { Write-Host "choco installed $p successfully"; $installed = $true; break }
             }
-            if (-not $installed) { Write-Host 'No Chocolatey package installed successfully.' }
-          } else { Write-Host 'Chocolatey not available; skipping choco step.' }
+          }
 
-          # 2) Try official Microsoft offline installer for .NET 4.0
-          $url = 'https://download.microsoft.com/download/9/5/a/95a9616b-7a37-4af6-bc36-d6ea96c8daae/dotNetFx40_Full_x86_x64.exe'
-          $out = "$env:TEMP\dotnetfx40.exe"
-          Write-Host "Downloading $url to $out..."
-          try {
-            Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing -ErrorAction Stop
-            Write-Host 'Download completed.'
-          } catch { Write-Host "Download failed or blocked: $_" }
-
-          if (Test-Path $out) {
-            Write-Host 'Running .NET 4.0 installer (quiet)...'
-            try {
-              & $out '/q'
-              Write-Host 'Installer process finished.'
-            } catch { Write-Host "Installer run failed: $_" }
-          } else { Write-Host 'Installer not available; skipping MSI install.' }
-
-          # 3) Verify install by checking Reference Assemblies location
-          $refPath = 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0'
-          if (Test-Path $refPath) { Write-Host "Targeting pack present at $refPath" } else { Write-Host "Targeting pack NOT found at $refPath after attempts" }
+          if ($copied) { Write-Host 'XNA assemblies placed in lib/'; Get-ChildItem "$libDir\*.dll" | ForEach-Object { Write-Host $_.Name } }
+          else { Write-Host 'XNA assemblies not found; build may fail.' }
 
       - name: Restore NuGet packages 📦
         run: nuget restore Terraria.sln
