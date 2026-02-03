@@ -74,8 +74,17 @@ jobs:
                 $extractDir = Join-Path $env:TEMP 'xna_extract'
                 if (Test-Path $extractDir) { Remove-Item $extractDir -Recurse -Force }
                 msiexec /a $msi /qn TARGETDIR=$extractDir
-                Copy-Item "$extractDir\*.dll" -Destination $libDir -Force -ErrorAction SilentlyContinue
-                if (Get-ChildItem "$libDir\*.dll" -ErrorAction SilentlyContinue) { $copied = $true; break }
+                $dllNames = @(
+                  'Microsoft.Xna.Framework.dll',
+                  'Microsoft.Xna.Framework.Game.dll',
+                  'Microsoft.Xna.Framework.Graphics.dll',
+                  'Microsoft.Xna.Framework.Xact.dll'
+                )
+                foreach ($dll in $dllNames) {
+                  $found = Get-ChildItem -Path $extractDir -Recurse -Filter $dll | Select-Object -First 1
+                  if ($found) { Copy-Item $found.FullName -Destination $libDir -Force -ErrorAction SilentlyContinue }
+                }
+                if (Test-Path (Join-Path $libDir 'Microsoft.Xna.Framework.dll')) { $copied = $true; break }
               } catch {
                 Write-Host "Failed to download/extract from $u"
               }
