@@ -53,21 +53,39 @@ jobs:
         run: |
           Write-Host 'Attempting to install .NET Framework 4.0 Developer/Targeting Pack (best-effort)...'
 
-          # 1) Try Chocolatey (if available)
+          # 1) Try Chocolatey (if available) - run packages sequentially and stop on success
           if (Get-Command choco -ErrorAction SilentlyContinue) {
-            Write-Host 'Trying Chocolatey packages...'
-            choco install netfx -y || choco install dotnet4 -y || choco install dotnetfx -y || Write-Host 'No suitable choco package available or install failed.'
+            Write-Host 'Chocolatey found. Trying candidate packages sequentially...'
+            $packages = @('netfx','dotnet4','dotnetfx')
+            $installed = $false
+            foreach ($p in $packages) {
+              Write-Host "Attempting: choco install $p -y"
+              try {
+                & choco install $p -y
+              } catch {
+                Write-Host "choco install $p failed with error: $_"
+              }
+              if ($LASTEXITCODE -eq 0) { Write-Host "choco installed $p successfully"; $installed = $true; break }
+            }
+            if (-not $installed) { Write-Host 'No Chocolatey package installed successfully.' }
           } else { Write-Host 'Chocolatey not available; skipping choco step.' }
 
           # 2) Try official Microsoft offline installer for .NET 4.0
           $url = 'https://download.microsoft.com/download/1/1/6/116D46CE-6D1F-40FE-A1D9-902B0A0AA8BC/dotNetFx40_Full_x86_x64.exe'
           $out = "$env:TEMP\dotnetfx40.exe"
           Write-Host "Downloading $url to $out..."
-          try { Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing -ErrorAction Stop } catch { Write-Host 'Download failed or blocked.' }
+          try {
+            Invoke-WebRequest -Uri $url -OutFile $out -UseBasicParsing -ErrorAction Stop
+            Write-Host 'Download completed.'
+          } catch { Write-Host "Download failed or blocked: $_" }
+
           if (Test-Path $out) {
             Write-Host 'Running .NET 4.0 installer (quiet)...'
-            Start-Process -FilePath $out -ArgumentList '/q' -Wait -NoNewWindow -ErrorAction SilentlyContinue
-          }
+            try {
+              & $out '/q'
+              Write-Host 'Installer process finished.'
+            } catch { Write-Host "Installer run failed: $_" }
+          } else { Write-Host 'Installer not available; skipping MSI install.' }
 
           # 3) Verify install by checking Reference Assemblies location
           $refPath = 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0'
