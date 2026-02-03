@@ -133,6 +133,14 @@ jobs:
           name: build-log
           path: build.log
 
+      - name: Copy steam_api.dll to output if present 🧩
+        if: always()
+        shell: powershell
+        run: |
+          $src = Join-Path $env:GITHUB_WORKSPACE 'lib\steam_api.dll'
+          $out = Join-Path $env:GITHUB_WORKSPACE 'bin\Release\steam_api.dll'
+          if (Test-Path $src) { Copy-Item -Path $src -Destination $out -Force; Write-Host "Copied steam_api.dll to bin/Release" } else { Write-Host 'No steam_api.dll found in lib/' }
+
       - name: Show build output folder 🗂️
         if: always()
         shell: powershell
