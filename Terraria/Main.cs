@@ -534,8 +534,8 @@ namespace Terraria
 		public static Texture2D[] npcToggleTexture = new Texture2D[2];
 		public static Texture2D[] HBLockTexture = new Texture2D[2];
 		public static Texture2D[] buffTexture = new Texture2D[81];
-		public static Texture2D[] itemTexture = new Texture2D[1725];
-		public static Texture2D[] itemFlameTexture = new Texture2D[1725];
+		public static Texture2D[] itemTexture = new Texture2D[1726];
+		public static Texture2D[] itemFlameTexture = new Texture2D[1726];
 		public static Texture2D[] npcTexture = new Texture2D[301];
 		public static Texture2D[] projectileTexture = new Texture2D[311];
 		public static Texture2D[] goreTexture = new Texture2D[438];
@@ -4465,7 +4465,7 @@ namespace Terraria
 			}
 			this.LoadBackground(0);
 			this.LoadBackground(49);
-			for (int num6 = 0; num6 < 1725; num6++)
+			for (int num6 = 0; num6 < 1726; num6++)
 			{
 				Main.itemTexture[num6] = base.Content.Load<Texture2D>(string.Concat(new object[]
 				{

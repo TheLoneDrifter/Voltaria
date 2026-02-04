@@ -28157,6 +28157,22 @@ namespace Terraria
 				this.rare = 2;
 				this.toolTip = "Allows the holder to double jump";
 				this.value = 75000;
+				goto IL_2B846;
+			}
+			if (this.type == 1725)
+			{
+				this.name = "Crowned Jello";
+				this.useStyle = 2;
+				this.useTurn = true;
+				this.useAnimation = 17;
+				this.useTime = 17;
+				this.width = 16;
+				this.height = 18;
+				this.healLife = 20;
+				this.maxStack = 99;
+				this.consumable = true;
+				this.value = 50;
+				goto IL_2B846;
 			}
 			IL_2B846:
 			this.netID = this.type;
