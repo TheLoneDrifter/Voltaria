@@ -4210,7 +4210,7 @@ namespace Terraria
 			{
 				Main.pixelShader = base.Content.Load<Effect>("pixelShader");
 				Main.tileShader = base.Content.Load<Effect>("tileShader");
-				Main.engine = new AudioEngine("Content" + Path.DirectorySeparatorChar + "TerrariaMusic.xgs");
+				Main.engine = new AudioEngine("Content" + Path.DirectorySeparatorChar + "VoltariaMusic.xgs");
 				Main.soundBank = new SoundBank(Main.engine, "Content" + Path.DirectorySeparatorChar + "Sound Bank.xsb");
 				Main.waveBank = new WaveBank(Main.engine, "Content" + Path.DirectorySeparatorChar + "Wave Bank.xwb");
 				for (int i = 1; i < 30; i++)
