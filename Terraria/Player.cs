@@ -18173,14 +18173,14 @@ namespace Terraria
 			this.inventory[0].SetDefaults("Copper Shortsword");
 			this.inventory[1].SetDefaults("Copper Pickaxe");
 			this.inventory[2].SetDefaults("Copper Axe");
-			this.inventory[4].SetDefaults(1725, false);
-			this.inventory[4].stack = 10;
-			this.inventory[5].SetDefaults(1726, false);
-			this.inventory[5].stack = 1;
+			this.inventory[3].SetDefaults(1725, false);
+			this.inventory[3].stack = 10;
+			this.inventory[4].SetDefaults(1726, false);
+			this.inventory[4].stack = 1;
 			this.statManaMax = 20;
 			if (Main.cEd)
 			{
-				this.inventory[4].SetDefaults(603, false);
+				this.inventory[5].SetDefaults(603, false);
 			}
 			for (int l = 0; l < 251; l++)
 			{
