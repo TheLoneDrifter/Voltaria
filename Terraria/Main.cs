@@ -14,7 +14,7 @@ namespace Terraria
 {
 	public class Main : Game
 	{
-		public const int maxItemTypes = 1725;
+		public const int maxItemTypes = 1726;
 		public const int maxProjectileTypes = 311;
 		public const int maxNPCTypes = 301;
 		public const int maxTileSets = 251;
@@ -70,7 +70,7 @@ namespace Terraria
 		public static bool[] wingsLoaded = new bool[21];
 		public static bool[] goreLoaded = new bool[438];
 		public static bool[] projectileLoaded = new bool[311];
-		public static bool[] itemFlameLoaded = new bool[1725];
+		public static bool[] itemFlameLoaded = new bool[1726];
 		public static bool[] backgroundLoaded = new bool[185];
 		public static bool[] tileSetsLoaded = new bool[251];
 		public static bool[] wallLoaded = new bool[113];
@@ -839,7 +839,7 @@ namespace Terraria
 		});
 		public static string WorldPath = Main.SavePath + Path.DirectorySeparatorChar + "Worlds";
 		public static string PlayerPath = Main.SavePath + Path.DirectorySeparatorChar + "Players";
-		public static string[] itemName = new string[1725];
+		public static string[] itemName = new string[1726];
 		public static string[] npcName = new string[301];
 		private static KeyboardState inputText;
 		private static KeyboardState oldInputText;
@@ -4057,7 +4057,7 @@ namespace Terraria
 			{
 				Main.itemText[num10] = new ItemText();
 			}
-			for (int num11 = 0; num11 < 1725; num11++)
+			for (int num11 = 0; num11 < 1726; num11++)
 			{
 				Item item = new Item();
 				item.SetDefaults(num11, false);

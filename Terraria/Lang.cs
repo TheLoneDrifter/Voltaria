@@ -5352,7 +5352,7 @@ namespace Terraria
 		}
 		public static void tTip()
 		{
-			for (int i = 1; i < 1725; i++)
+			for (int i = 1; i < 1726; i++)
 			{
 				Item item = new Item();
 				item.SetDefaults(i, false);
@@ -18881,6 +18881,8 @@ namespace Terraria
 					return "Living Wood Wall";
 				case 1724:
 					return "Fart in a Jar";
+				case 1725:
+					return "Crowned Jello";
 				}
 			}
 			else

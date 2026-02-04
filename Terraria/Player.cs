@@ -17784,7 +17784,7 @@ namespace Terraria
 									for (int k = 0; k < 58; k++)
 									{
 										int num2 = binaryReader.ReadInt32();
-										if (num2 >= 1725)
+										if (num2 >= 1726)
 										{
 											player.inventory[k].netDefaults(0);
 										}
@@ -17801,7 +17801,7 @@ namespace Terraria
 									for (int l = 0; l < 48; l++)
 									{
 										int num3 = binaryReader.ReadInt32();
-										if (num3 >= 1725)
+										if (num3 >= 1726)
 										{
 											player.inventory[l].netDefaults(0);
 										}
@@ -18163,7 +18163,7 @@ namespace Terraria
 			this.inventory[0].SetDefaults("Copper Shortsword");
 			this.inventory[1].SetDefaults("Copper Pickaxe");
 			this.inventory[2].SetDefaults("Copper Axe");
-			this.inventory[4].SetDefaults("Crowned Jello");
+			this.inventory[4].SetDefaults(1725, false);
 			this.statManaMax = 20;
 			if (Main.cEd)
 			{

@@ -3676,7 +3676,7 @@ namespace Terraria
 			}
 			if (ItemName != "")
 			{
-				for (int i = 0; i < 1725; i++)
+				for (int i = 0; i < 1726; i++)
 				{
 					if (Main.itemName[i] == ItemName)
 					{
