@@ -18163,6 +18163,7 @@ namespace Terraria
 			this.inventory[0].SetDefaults("Copper Shortsword");
 			this.inventory[1].SetDefaults("Copper Pickaxe");
 			this.inventory[2].SetDefaults("Copper Axe");
+			this.inventory[4].SetDefaults(1725, false);
 			this.statManaMax = 20;
 			if (Main.cEd)
 			{
