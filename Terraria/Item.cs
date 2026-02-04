@@ -4871,35 +4871,6 @@ namespace Terraria
 				this.melee = true;
 				goto IL_381A;
 			}
-			if (this.type == 1725)
-			{
-				this.name = "Crowned Jello";
-				this.useStyle = 2;
-				this.useTurn = true;
-				this.useAnimation = 17;
-				this.useTime = 17;
-				this.maxStack = 100;
-				this.consumable = true;
-				this.healLife = 20;
-				this.value = 200;
-				this.rare = 1;
-				this.UseSound = SoundID.Item2;
-				return;
-			}
-			if (this.type == 1726)
-			{
-				this.name = "Prismatic Crowned Jello";
-				this.useStyle = 2;
-				this.useTurn = true;
-				this.useAnimation = 17;
-				this.useTime = 17;
-				this.maxStack = 99;
-				this.consumable = true;
-				this.value = 1000;
-				this.rare = 3;
-				this.UseSound = SoundID.Item3;
-				return;
-			}
 			if (this.type == 25)
 			{
 				this.name = "Wooden Door";
