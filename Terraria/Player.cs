@@ -16886,8 +16886,8 @@ namespace Terraria
 				// Prismatic Crowned Jello - permanent 5 HP boost
 				if (this.inventory[this.selectedItem].type == 1726)
 				{
-					this.statLifeMax2 += 5;
 					this.statLifeMax += 5;
+					this.statLife += 5;
 					if (Main.myPlayer == this.whoAmi)
 					{
 						Main.NewText("Your maximum life has increased by 5!", 175, 75, 255);

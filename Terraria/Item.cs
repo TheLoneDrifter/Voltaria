@@ -4883,7 +4883,7 @@ namespace Terraria
 				this.healLife = 20;
 				this.value = 200;
 				this.rare = 1;
-				this.UseSound = SoundID.Item2;
+				this.useSound = 2;
 				return;
 			}
 			if (this.type == 1726)
@@ -4897,7 +4897,7 @@ namespace Terraria
 				this.consumable = true;
 				this.value = 1000;
 				this.rare = 3;
-				this.UseSound = SoundID.Item3;
+				this.useSound = 3;
 				return;
 			}
 			if (this.type == 25)
@@ -28186,21 +28186,6 @@ namespace Terraria
 				this.rare = 2;
 				this.toolTip = "Allows the holder to double jump";
 				this.value = 75000;
-				goto IL_2B846;
-			}
-			if (this.type == 1725)
-			{
-				this.name = "Crowned Jello";
-				this.useStyle = 2;
-				this.useTurn = true;
-				this.useAnimation = 17;
-				this.useTime = 17;
-				this.width = 16;
-				this.height = 18;
-				this.healLife = 20;
-				this.maxStack = 100;
-				this.consumable = true;
-				this.value = 50;
 				goto IL_2B846;
 			}
 			IL_2B846:
