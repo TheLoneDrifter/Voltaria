@@ -28169,7 +28169,7 @@ namespace Terraria
 				this.width = 16;
 				this.height = 18;
 				this.healLife = 20;
-				this.maxStack = 99;
+				this.maxStack = 100;
 				this.consumable = true;
 				this.value = 50;
 				goto IL_2B846;
