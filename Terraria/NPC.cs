@@ -32506,6 +32506,11 @@ namespace Terraria
 			{
 				Item.NewItem((int)this.position.X, (int)this.position.Y, this.width, this.height, 1725, 1, false, -1, false);
 			}
+			// Prismatic Crowned Jello drop from basic slimes (type 1) - 1/10th chance
+			if (this.type == 1 && Main.rand.Next(10) == 0)
+			{
+				Item.NewItem((int)this.position.X, (int)this.position.Y, this.width, this.height, 1726, 1, false, -1, false);
+			}
 			if (this.type == 290)
 			{
 				if (Main.rand.Next(35) == 0)
