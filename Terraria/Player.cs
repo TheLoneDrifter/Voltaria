@@ -16883,16 +16883,6 @@ namespace Terraria
 						this.HealEffect(this.inventory[this.selectedItem].healLife, true);
 					}
 				}
-				// Prismatic Crowned Jello - permanent 5 HP boost
-				if (this.inventory[this.selectedItem].type == 1726)
-				{
-					this.statLifeMax += 5;
-					this.statLife += 5;
-					if (Main.myPlayer == this.whoAmi)
-					{
-						Main.NewText("Your maximum life has increased by 5!", 175, 75, 255);
-					}
-				}
 				if (this.inventory[this.selectedItem].healMana > 0)
 				{
 					this.statMana += this.inventory[this.selectedItem].healMana;
@@ -18175,12 +18165,10 @@ namespace Terraria
 			this.inventory[2].SetDefaults("Copper Axe");
 			this.inventory[3].SetDefaults(1725, false);
 			this.inventory[3].stack = 10;
-			this.inventory[4].SetDefaults(1726, false);
-			this.inventory[4].stack = 1;
 			this.statManaMax = 20;
 			if (Main.cEd)
 			{
-				this.inventory[5].SetDefaults(603, false);
+				this.inventory[4].SetDefaults(603, false);
 			}
 			for (int l = 0; l < 251; l++)
 			{
