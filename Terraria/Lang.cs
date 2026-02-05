@@ -18882,7 +18882,7 @@ namespace Terraria
 				case 1724:
 					return "Fart in a Jar";
 				case 1725:
-					return "Crowned Jello";
+					return "Prismatic Jello";
 				}
 			}
 			else

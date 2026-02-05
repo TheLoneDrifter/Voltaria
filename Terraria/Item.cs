@@ -28161,7 +28161,7 @@ namespace Terraria
 			}
 			if (this.type == 1725)
 			{
-				this.name = "Crowned Jello";
+				this.name = "Prismatic Jello";
 				this.useStyle = 2;
 				this.useTurn = true;
 				this.useAnimation = 17;
